@@ -1,26 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import {HttpClientModule} from '@angular/common/http';
-import { NewsDataService } from './Services/news-data.service';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
+import { AppComponent } from './app.component';
+import { NewsListComponent } from './news-list/news-list.component';
+import { NewsDataService } from './Services/news-data.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewsListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [NewsDataService],
   bootstrap: [AppComponent]
 })
-export class AppModule 
-{
-
- }
+export class AppModule { }

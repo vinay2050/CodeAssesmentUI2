@@ -1,0 +1,34 @@
+
+<div class="search-container">
+    <input type="text" class="search-input" placeholder="Search..." [(ngModel)]="searchInput">
+      
+    <button class="search-button" type="button" (click)="search(1)">Search</button>
+    <button class="search-button" type="button" (click)="clearText()">Clear</button>
+    </div>
+    
+    <table class="news-table">
+      <thead>
+        <tr>
+          <th class="news-table-no">Items</th>
+          <th class="news-table-data">Title</th>
+          <th class="news-table-data">URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let news of News; let i = index">
+          <td class="news-table-rno">{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+          <td>{{ news.title }}</td>
+          <td><a [href]="news.url" target="_blank">{{ news.url }}</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="!News.length">
+      No news found.
+    </div>
+    
+    <div class="pagination-container">
+      <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+      <span>{{ currentPage }} / {{ totalPages }}</span>
+      <button (click)="nextPage()" [disabled]="(currentPage * itemsPerPage) >= totalCount">Next</button>
+    </div>  
+    
