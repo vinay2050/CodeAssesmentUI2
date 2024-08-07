@@ -25,3 +25,19 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Project Structure
+
+The `CodeAssesmentUI` project includes the following key components:
+
+- **news-list.component.ts**: Displays the list of news stories with pagination and search functionality.
+- **news-list.component.html**: Template for displaying the news stories and controls for search and pagination.
+- **news-data.service.ts**: Service for fetching news stories from the backend API.
+- **app.module.ts**: Main module of the Angular application.
+
+## Setup Instructions
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/CodeAssesmentUI.git
+   cd CodeAssesmentUI
